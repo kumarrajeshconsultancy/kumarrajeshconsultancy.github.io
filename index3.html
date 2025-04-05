@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Rajesh Consultancy - Comprehensive Business & Tech Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #fff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .free-consultation {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-left: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Button */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+            margin-top: 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Section */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: var(--light-color);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--accent-color);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background-color: white;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+            animation: modalOpen 0.5s ease;
+        }
+
+        @keyframes modalOpen {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .stat-text {
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details i {
+            margin-right: 1rem;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 1rem;
+                box-shadow: var(--shadow);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+
+            .modal-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.4rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* TV Styles */
+        @media (min-width: 1920px) {
+            body {
+                font-size: 110%;
+            }
+            
+            .section {
+                padding: 7rem 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 4rem;
+            }
+            
+            .hero p {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 3.5rem;
+                margin-bottom: 4rem;
+            }
+            
+            .services-container {
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 3rem;
+            }
+            
+            .modal-content {
+                max-width: 1000px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <a href="#" class="logo">Kumar Rajesh <span>Consultancy</span></a>
+            <span class="free-consultation">Free Consultation</span>
+        </div>
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Comprehensive Business & Technology Solutions</h1>
+            <p>We provide expert consulting services across business strategy, technology development, and career growth to help you achieve your goals.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="About Kumar Rajesh Consultancy">
+            </div>
+            <div class="about-content">
+                <h3>Your Trusted Business & Technology Partner</h3>
+                <p>Kumar Rajesh Consultancy offers comprehensive solutions spanning business strategy, technology development, and career growth. With expertise across multiple domains, we help clients navigate complex challenges and achieve sustainable success.</p>
+                <p>Our team combines deep industry knowledge with technical expertise to deliver customized solutions that drive growth, efficiency, and innovation.</p>
+                <p>Whether you're a startup, established business, NGO, or individual professional, we have the tools and expertise to help you succeed.</p>
+                <a href="#services" class="btn">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-container">
+            <!-- Business Services -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="Business Strategy">
+                </div>
+                <div class="service-content">
+                    <h3>Business Strategy</h3>
+                    <p>Comprehensive business planning and strategy development to help you navigate market challenges and seize opportunities.</p>
+                    <button class="read-more" data-modal="modal1">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Web Development">
+                </div>
+                <div class="service-content">
+                    <h3>Web Development</h3>
+                    <p>Custom website development with responsive design, e-commerce solutions, and SEO optimization for maximum impact.</p>
+                    <button class="read-more" data-modal="modal2">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- App Development -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="App Development">
+                </div>
+                <div class="service-content">
+                    <h3>App Development</h3>
+                    <p>Native and cross-platform mobile application development for iOS and Android with intuitive UI/UX design.</p>
+                    <button class="read-more" data-modal="modal3">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- NGO Consultancy -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="NGO Consultancy">
+                </div>
+                <div class="service-content">
+                    <h3>NGO Consultancy</h3>
+                    <p>Specialized guidance for NGOs including registration, compliance, fundraising strategies, and impact measurement.</p>
+                    <button class="read-more" data-modal="modal4">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Tech Consultancy -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Tech Consultancy">
+                </div>
+                <div class="service-content">
+                    <h3>Tech Consultancy</h3>
+                    <p>Comprehensive technology advisory services including system architecture, digital transformation, and IT strategy.</p>
+                    <button class="read-more" data-modal="modal5">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Career Services -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Career Services">
+                </div>
+                <div class="service-content">
+                    <h3>Career Services</h3>
+                    <p>Resume building, interview preparation, LinkedIn optimization, and personalized career guidance for professionals.</p>
+                    <button class="read-more" data-modal="modal6">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Mobile Tracing -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mobile Tracing">
+                </div>
+                <div class="service-content">
+                    <h3>Mobile Tracing</h3>
+                    <p>Advanced mobile tracking solutions for businesses including fleet management and location-based services.</p>
+                    <button class="read-more" data-modal="modal7">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Cyber Security -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cyber Security">
+                </div>
+                <div class="service-content">
+                    <h3>Cyber Security</h3>
+                    <p>Comprehensive security assessments, penetration testing, and cybersecurity strategy development.</p>
+                    <button class="read-more" data-modal="modal8">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- YouTube Growth -->
+            <div class="service-card">
+                <div class="service-img">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="YouTube Growth">
+                </div>
+                <div class="service-content">
+                    <h3>YouTube Growth</h3>
+                    <p>Channel strategy, content planning, SEO optimization, and monetization guidance for YouTube creators.</p>
+                    <button class="read-more" data-modal="modal9">Read More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number" id="clients-count">1500+</div>
+                <div class="stat-text">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="projects-count">500+</div>
+                <div class="stat-text">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="experience-count">15+</div>
+                <div class="stat-text">Years of Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="team-count">20+</div>
+                <div class="stat-text">Expert Consultants</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Street, Financial District, Mumbai, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@kumarrajeshconsultancy.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service" class="form-group input">
+                            <option value="">Select a service</option>
+                            <option value="Business Strategy">Business Strategy</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="App Development">App Development</option>
+                            <option value="NGO Consultancy">NGO Consultancy</option>
+                            <option value="Tech Consultancy">Tech Consultancy</option>
+                            <option value="Career Services">Career Services</option>
+                            <option value="Mobile Tracing">Mobile Tracing</option>
+                            <option value="Cyber Security">Cyber Security</option>
+                            <option value="YouTube Growth">YouTube Growth</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Kumar Rajesh Consultancy</h3>
+                <p>Providing comprehensive business and technology consulting services to help organizations and individuals achieve their goals.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#" data-modal="modal1">Business Strategy</a></li>
+                    <li><a href="#" data-modal="modal2">Web Development</a></li>
+                    <li><a href="#" data-modal="modal3">App Development</a></li>
+                    <li><a href="#" data-modal="modal4">NGO Consultancy</a></li>
+                    <li><a href="#" data-modal="modal5">Tech Consultancy</a></li>
+                    <li><a href="#" data-modal="modal6">Career Services</a></li>
+                    <li><a href="#" data-modal="modal7">Mobile Tracing</a></li>
+                    <li><a href="#" data-modal="modal8">Cyber Security</a></li>
+                    <li><a href="#" data-modal="modal9">YouTube Growth</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates and insights.</p>
+                <form id="newsletterForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Kumar Rajesh Consultancy. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Service Modals -->
+    <!-- Modal 1 - Business Strategy -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">Business Strategy</h2>
+            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="Business Strategy" class="modal-img">
+            <p>Our Business Strategy service helps organizations develop clear roadmaps for sustainable growth and competitive advantage. We analyze your current position, market dynamics, and internal capabilities to create actionable strategies.</p>
+            
+            <h3>Key Offerings:</h3>
+            <ul>
+                <li>Market analysis and competitive intelligence</li>
+                <li>SWOT and PESTEL analysis</li>
+                <li>Strategic planning and execution frameworks</li>
+                <li>Business model innovation</li>
+                <li>Performance measurement systems</li>
+            </ul>
+            
+            <h3>Benefits:</h3>
+            <ul>
+                <li>Clear direction for organizational growth</li>
+                <li>Improved decision-making processes</li>
+                <li>Enhanced competitive positioning</li>
+                <li>Better resource allocation</li>
+                <li>Increased profitability and market share</li>
+            </ul>
+            
+            <p>Whether you're launching a new venture, expanding to new markets, or optimizing existing operations, our strategic consulting provides the insights and frameworks you need to succeed.</p>
+            <a href="#contact" class="btn">Get a Consultation</a>
+        </div>
+    </div>
+
+    <!-- Modal 2 - Web Development -->
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">Web Development</h2>
+            <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Web Development" class="modal-img">
+            <p>We create custom websites that are visually appealing, functionally robust, and optimized for performance across all devices. Our web development services cover everything from simple brochure sites to complex web applications.</p>
+            
+            <h3>Our Expertise:</h3>
+            <ul>
+                <li>Responsive web design (mobile-friendly)</li>
+                <li>E-commerce solutions (WooCommerce, Shopify, custom)</li>
+                <li>Content Management Systems (WordPress, Drupal, etc.)</li>
+                <li>Custom web applications</li>
+                <li>API integrations</li>
+                <li>SEO-friendly development</li>
+            </ul>
+            
+            <h3>Development Process:</h3>
+            <ol>
+                <li>Requirement analysis and planning</li>
+                <li>UI/UX design prototyping</li>
+                <li>Front-end and back-end development</li>
+                <li>Quality assurance and testing</li>
+                <li>Deployment and maintenance</li>
+            </ol>
+            
+            <p>We use modern technologies including HTML5, CSS3, JavaScript, React, Angular, Node.js, PHP, and Python to build websites that deliver exceptional user experiences.</p>
+            <a href="#contact" class="btn">Start Your Project</a>
+        </div>
+    </div>
+
+    <!-- Modal 3 - App Development -->
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">App Development</h2>
+            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="App Development" class="modal-img">
+            <p>We develop high-performance mobile applications for iOS and Android platforms that engage users and deliver business results. Our apps are built with scalability, security, and user experience at the forefront.</p>
+            
+            <h3>Our App Development Services:</h3>
+            <ul>
+                <li>Native iOS app development (Swift)</li>
+                <li>Native Android app development (Kotlin)</li>
+                <li>Cross-platform apps (React Native, Flutter)</li>
+                <li>UI/UX design for mobile</li>
+                <li>App testing and quality assurance</li>
+                <li>App store optimization and publishing</li>
+                <li>Maintenance and updates</li>
+            </ul>
+            
+            <h3>Industries We Serve:</h3>
+            <ul>
+                <li>E-commerce and retail</li>
+                <li>Healthcare and fitness</li>
+                <li>Banking and finance</li>
+                <li>Education and e-learning</li>
+                <li>Social networking</li>
+                <li>On-demand services</li>
+            </ul>
+            
+            <p>From concept to launch and beyond, we guide you through the entire app development lifecycle to create solutions that users love and businesses benefit from.</p>
+            <a href="#contact" class="btn">Discuss Your App Idea</a>
+        </div>
+    </div>
+
+    <!-- Modal 4 - NGO Consultancy -->
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">NGO Consultancy</h2>
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="NGO Consultancy" class="modal-img">
+            <p>We provide specialized consulting services to non-governmental organizations (NGOs) to help them establish, grow, and maximize their social impact. Our expertise covers legal, operational, and strategic aspects of NGO management.</p>
+            
+            <h3>Our NGO Services:</h3>
+            <ul>
+                <li>NGO registration and compliance</li>
+                <li>Governance and organizational structure</li>
+                <li>Fundraising strategy and grant writing</li>
+                <li>Program design and impact measurement</li>
+                <li>Partnership development</li>
+                <li>Financial management for NGOs</li>
+                <li>Capacity building and training</li>
+            </ul>
+            
+            <h3>Why Choose Us:</h3>
+            <ul>
+                <li>Extensive experience working with NGOs of all sizes</li>
+                <li>Deep understanding of regulatory requirements</li>
+                <li>Proven track record in securing funding</li>
+                <li>Practical, actionable advice</li>
+                <li>Commitment to social impact</li>
+            </ul>
+            
+            <p>Whether you're starting a new NGO or looking to enhance the effectiveness of an existing organization, we provide the guidance and tools you need to succeed in your mission.</p>
+            <a href="#contact" class="btn">Get NGO Support</a>
+        </div>
+    </div>
+
+    <!-- Modal 5 - Tech Consultancy -->
+    <div class="modal" id="modal5">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">Tech Consultancy</h2>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80" alt="Tech Consultancy" class="modal-img">
+            <p>Our technology consulting services help businesses leverage cutting-edge solutions to solve complex challenges, improve efficiency, and drive innovation. We bridge the gap between business needs and technical solutions.</p>
+            
+            <h3>Our Tech Consulting Areas:</h3>
+            <ul>
+                <li>Digital transformation strategy</li>
+                <li>IT infrastructure assessment</li>
+                <li>Cloud computing solutions</li>
+                <li>Software selection and implementation</li>
+                <li>Data analytics and business intelligence</li>
+                <li>Enterprise architecture</li>
+                <li>Technology roadmap development</li>
+            </ul>
+            
+            <h3>Our Approach:</h3>
+            <ol>
+                <li>Understand your business objectives</li>
+                <li>Assess current technology landscape</li>
+                <li>Identify gaps and opportunities</li>
+                <li>Recommend optimal solutions</li>
+                <li>Support implementation</li>
+            </ol>
+            
+            <p>With expertise across industries and technologies, we help you make informed decisions about technology investments that deliver measurable business value.</p>
+            <a href="#contact" class="btn">Schedule Tech Consultation</a>
+        </div>
+    </div>
+
+    <!-- Modal 6 - Career Services -->
+    <div class="modal" id="modal6">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">Career Services</h2>
+            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Career Services" class="modal-img">
+            <p>We provide comprehensive career development services to help professionals at all levels achieve their career goals. From resume writing to interview preparation, we equip you with the tools for success.</p>
+            
+            <h3>Our Career Services:</h3>
+            <ul>
+                <li>Professional resume writing</li>
+                <li>Cover letter development</li>
+                <li>LinkedIn profile optimization</li>
+                <li>Interview coaching</li>
+                <li>Career transition support</li>
+                <li>Salary negotiation guidance</li>
+                <li>Personal branding strategy</li>
+            </ul>
+            
+            <h3>Who Can Benefit:</h3>
+            <ul>
+                <li>Recent graduates entering the job market</li>
+                <li>Mid-career professionals seeking advancement</li>
+                <li>Executives pursuing leadership roles</li>
+                <li>Career changers transitioning to new fields</li>
+                <li>Returning professionals re-entering the workforce</li>
+            </ul>
+            
+            <p>Our career consultants have extensive experience across industries and understand what employers look for. We tailor our approach to your unique background, skills, and aspirations.</p>
+            <a href="#contact" class="btn">Boost Your Career</a>
+        </div>
+    </div>
+
+    <!-- Modal 7 - Mobile Tracing -->
+    <div class="modal" id="modal7">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">Mobile Tracing</h2>
+            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mobile Tracing" class="modal-img">
+            <p>Our mobile tracing solutions provide businesses with real-time location intelligence to optimize operations, improve safety, and enhance customer experiences. We develop customized tracking solutions for various use cases.</p>
+            
+            <h3>Our Mobile Tracing Solutions:</h3>
+            <ul>
+                <li>Fleet management and vehicle tracking</li>
+                <li>Asset tracking and management</li>
+                <li>Field service employee tracking</li>
+                <li>Location-based marketing solutions</li>
+                <li>Geofencing applications</li>
+                <li>Custom tracking app development</li>
+            </ul>
+            
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Real-time location tracking</li>
+                <li>Historical route playback</li>
+                <li>Geofence alerts and notifications</li>
+                <li>Custom reporting and analytics</li>
+                <li>Integration with existing systems</li>
+                <li>Cross-platform compatibility</li>
+            </ul>
+            
+            <p>Whether you need to track vehicles, assets, or personnel, our solutions provide the visibility and control you need to make data-driven decisions and improve operational efficiency.</p>
+            <a href="#contact" class="btn">Explore Tracing Solutions</a>
+        </div>
+    </div>
+
+    <!-- Modal 8 - Cyber Security -->
+    <div class="modal" id="modal8">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">Cyber Security</h2>
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cyber Security" class="modal-img">
+            <p>We provide comprehensive cybersecurity services to protect your business from evolving digital threats. Our solutions help you identify vulnerabilities, strengthen defenses, and respond effectively to security incidents.</p>
+            
+            <h3>Our Cybersecurity Services:</h3>
+            <ul>
+                <li>Security risk assessments</li>
+                <li>Vulnerability scanning and penetration testing</li>
+                <li>Security policy development</li>
+                <li>Incident response planning</li>
+                <li>Security awareness training</li>
+                <li>Compliance advisory (GDPR, HIPAA, etc.)</li>
+                <li>Managed security services</li>
+            </ul>
+            
+            <h3>Our Approach:</h3>
+            <ol>
+                <li>Assess your current security posture</li>
+                <li>Identify risks and vulnerabilities</li>
+                <li>Recommend prioritized improvements</li>
+                <li>Implement security controls</li>
+                <li>Monitor and maintain security</li>
+            </ol>
+            
+            <p>With cyber threats becoming more sophisticated, proactive security measures are essential. We help you build a robust security framework tailored to your specific risks and business requirements.</p>
+            <a href="#contact" class="btn">Secure Your Business</a>
+        </div>
+    </div>
+
+    <!-- Modal 9 - YouTube Growth -->
+    <div class="modal" id="modal9">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h2 class="modal-title">YouTube Growth</h2>
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="YouTube Growth" class="modal-img">
+            <p>We help content creators and brands grow their YouTube channels through strategic planning, optimization, and audience engagement techniques. Our proven methods can help you increase views, subscribers, and revenue.</p>
+            
+            <h3>Our YouTube Growth Services:</h3>
+            <ul>
+                <li>Channel strategy and content planning</li>
+                <li>Video SEO optimization</li>
+                <li>Thumbnail and title optimization</li>
+                <li>Audience growth strategies</li>
+                <li>Monetization guidance</li>
+                <li>Analytics and performance tracking</li>
+                <li>Brand collaboration opportunities</li>
+            </ul>
+            
+            <h3>Who We Help:</h3>
+            <ul>
+                <li>New YouTubers starting their channels</li>
+                <li>Established creators looking to grow</li>
+                <li>Businesses using YouTube for marketing</li>
+                <li>Influencers building their personal brand</li>
+                <li>Educators and trainers sharing knowledge</li>
+            </ul>
+            
+            <p>With YouTube's algorithm constantly changing, having an expert guide can make all the difference. We stay up-to-date with the latest trends and best practices to help your channel stand out and succeed.</p>
+            <a href="#contact" class="btn">Grow Your Channel</a>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav');
+
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Modal functionality
+        const modalBtns = document.querySelectorAll('[data-modal]');
+        const modals = document.querySelectorAll('.modal');
+        const closeBtns = document.querySelectorAll('.close-modal');
+
+        // Open modal
+        modalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close modal when clicking outside content
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        const newsletterForm = document.getElementById('newsletterForm');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            newsletterForm.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animate stats counting
+        function animateValue(id, start, end, duration) {
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = value + (id === 'clients-count' ? '+' : '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Start animations when stats section is in view
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue('clients-count', 0, 1500, 2000);
+                    animateValue('projects-count', 0, 500, 2000);
+                    animateValue('experience-count', 0, 15, 2000);
+                    animateValue('team-count', 0, 20, 2000);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(statsSection);
+    </script>
+</body>
+</html>
