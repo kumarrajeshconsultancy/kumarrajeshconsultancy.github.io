@@ -947,17 +947,20 @@
                 </div>
                 <div class="contact-right">
                     <form id="contact-form">
+                        <input type="hidden" name="_subject" value="New Consultation Request">
+                        <input type="hidden" name="_template" value="table">
+                        
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Your Phone">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
                         </div>
                         <div class="form-group">
-                            <select id="service" required>
+                            <select id="service" name="service" required>
                                 <option value="">Select Service</option>
                                 <option value="web">Website Development</option>
                                 <option value="app">App Development</option>
@@ -971,10 +974,14 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
+                    <div id="thank-you-message" style="display: none;">
+                        <h3>Thank You!</h3>
+                        <p>We've received your request and will contact you shortly.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1077,6 +1084,59 @@
             $('#contact-form').submit(function(e) {
                 e.preventDefault();
                 alert('Thank you for your message! We will contact you soon.');
+                this.reset();
+            });
+        });
+        // Updated Form Submission
+            $('#contact-form').submit(function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val(),
+                    service: $('#service').val(),
+                    message: $('#message').val(),
+                    _subject: "New Consultation Request - Kumar Rajesh Consultancy",
+                    _replyto: $('#email').val()
+                };
+
+                // 1. Send to FormSubmit (Email)
+                $.ajax({
+                    url: 'https://formsubmit.co/ajax/kumarrajeshconsultancy@gmail.com',
+                    method: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function(response) {
+                        console.log('Email sent successfully');
+                    },
+                    error: function(error) {
+                        console.log('Email error:', error);
+                    }
+                });
+
+                // 2. Send to Google Sheets
+                const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL'; // Replace with your deployed script URL
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: JSON.stringify(formData),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => console.log('Google Sheets updated'))
+                .catch(error => console.error('Google Sheets error:', error));
+
+                // 3. Send WhatsApp Notification
+                const whatsappMsg = `New Consultation Request:%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*Service:* ${formData.service}%0A*Message:* ${formData.message}`;
+                window.open(`https://wa.me/919876543210?text=${whatsappMsg}`, '_blank'); // Replace with your WhatsApp number
+
+                // Show thank you message
+                $('#contact-form').hide();
+                $('#thank-you-message').show();
+
+                // Reset form
                 this.reset();
             });
         });
