@@ -504,7 +504,7 @@ if ('serviceWorker' in navigator) {
 
 // UPI Copy Function
 function copyUPI() {
-    const upiId = "7705920756-3@ybl";
+    const upiId = "rk8595318@icici";
     
     // Try to copy to clipboard
     if (navigator.clipboard && window.isSecureContext) {
