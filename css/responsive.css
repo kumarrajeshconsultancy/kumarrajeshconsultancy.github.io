@@ -1,0 +1,512 @@
+/* Responsive Design for Kumar Rajesh Consultancy */
+
+/* Extra Large Devices (1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+/* Large Devices (1200px and up) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .course-card,
+    .consultancy-card {
+        min-height: 350px;
+    }
+}
+
+/* Medium Devices (992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .about-content {
+        padding-left: 1rem;
+    }
+    
+    .course-card,
+    .consultancy-card {
+        min-height: 320px;
+    }
+}
+
+/* Small Devices (768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-content {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .contact-form-card,
+    .contact-info {
+        margin-bottom: 2rem;
+    }
+    
+    .course-card,
+    .consultancy-card {
+        min-height: 280px;
+    }
+    
+    .stats-card {
+        margin-top: 2rem;
+    }
+}
+
+/* Extra Small Devices (less than 768px) */
+@media (max-width: 767.98px) {
+    /* Navigation */
+    .navbar-brand {
+        font-size: 0.9rem;
+    }
+    
+    .brand-name {
+        font-size: 14px;
+    }
+    
+    .brand-tagline {
+        font-size: 10px;
+    }
+    
+    .contact-btn {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        min-height: auto;
+        padding: 6rem 0 4rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .service-content h4 {
+        font-size: 1rem;
+    }
+    
+    .service-content p {
+        font-size: 0.8rem;
+    }
+    
+    .stats-card {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        text-align: center;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0 !important;
+    }
+    
+    /* Sections */
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    /* Training & Consultancy Cards */
+    .course-card,
+    .consultancy-card {
+        margin-bottom: 1.5rem;
+        min-height: auto;
+    }
+    
+    .course-content,
+    .consultancy-content {
+        padding: 1.25rem;
+    }
+    
+    .course-content h4,
+    .consultancy-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .course-description,
+    .consultancy-content p {
+        font-size: 0.85rem;
+    }
+    
+    .course-icon,
+    .consultancy-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    /* About Section */
+    .about-content {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .feature-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .about-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+        margin-right: 0 !important;
+    }
+    
+    /* Contact Section */
+    .contact-form-card {
+        margin-bottom: 2rem;
+    }
+    
+    .contact-form-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .contact-info-item {
+        margin-bottom: 1rem;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .contact-details h5 {
+        font-size: 1rem;
+    }
+    
+    .contact-details p {
+        font-size: 0.85rem;
+    }
+    
+    .quick-contact-buttons .btn {
+        margin-bottom: 0.75rem;
+    }
+    
+    /* Footer */
+    .footer .col-lg-3 {
+        margin-bottom: 2rem;
+    }
+    
+    .footer h5 {
+        font-size: 1.1rem;
+    }
+    
+    .social-links a {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-item {
+        font-size: 0.85rem;
+    }
+    
+    /* WhatsApp Float */
+    .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    /* Custom Solutions */
+    .custom-solutions-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .custom-solutions-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Form Elements */
+    .form-control,
+    .form-select {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Extra Small Devices (less than 576px) */
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    .service-card {
+        padding: 0.75rem;
+    }
+    
+    .service-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .service-content p {
+        font-size: 0.75rem;
+    }
+    
+    .stats-card {
+        padding: 1rem;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.75rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.8rem;
+    }
+    
+    /* Sections */
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    /* Cards */
+    .course-content,
+    .consultancy-content {
+        padding: 1rem;
+    }
+    
+    .course-content h4,
+    .consultancy-content h4 {
+        font-size: 1rem;
+    }
+    
+    .course-description,
+    .consultancy-content p {
+        font-size: 0.8rem;
+    }
+    
+    /* Contact Form */
+    .contact-form-card,
+    .contact-info-card,
+    .quick-contact {
+        padding: 1.5rem;
+    }
+    
+    .contact-form-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .quick-contact h4 {
+        font-size: 1.1rem;
+    }
+    
+    /* Custom Solutions */
+    .custom-solutions-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .custom-solutions-card h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: auto;
+        padding: 4rem 0 2rem;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+    
+    .service-card {
+        padding: 0.5rem;
+    }
+    
+    .stats-card {
+        padding: 1rem;
+        margin-top: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .whatsapp-float,
+    .hero-buttons,
+    .btn,
+    .contact-form-card {
+        display: none !important;
+    }
+    
+    .hero-section {
+        background: white !important;
+        color: black !important;
+        min-height: auto;
+        page-break-after: always;
+    }
+    
+    .section-title {
+        color: black !important;
+    }
+    
+    .course-card,
+    .consultancy-card {
+        break-inside: avoid;
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+    }
+    
+    .footer {
+        background: white !important;
+        color: black !important;
+        border-top: 2px solid #ccc;
+    }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .whatsapp-btn {
+        animation: none !important;
+    }
+    
+    .loading-spinner,
+    .loading-dot {
+        animation: none !important;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .course-card,
+    .consultancy-card,
+    .contact-form-card,
+    .contact-info-card {
+        border: 2px solid #000;
+    }
+    
+    .btn {
+        border: 2px solid #000;
+    }
+    
+    .form-control,
+    .form-select {
+        border: 2px solid #000;
+    }
+}
+
+/* Dark Mode (if system preference is dark) */
+@media (prefers-color-scheme: dark) {
+    /* This can be implemented if dark mode support is needed in the future */
+    /* Currently maintaining the original design as per requirements */
+}
