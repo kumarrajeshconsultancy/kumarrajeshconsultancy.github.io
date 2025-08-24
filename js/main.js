@@ -502,6 +502,73 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// UPI Copy Function
+function copyUPI() {
+    const upiId = "7705920756-3@ybl";
+    
+    // Try to copy to clipboard
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(upiId).then(function() {
+            showCopySuccess();
+        }).catch(function() {
+            fallbackCopy(upiId);
+        });
+    } else {
+        fallbackCopy(upiId);
+    }
+}
+
+function fallbackCopy(text) {
+    // Fallback method for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    textArea.style.top = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopySuccess();
+    } catch (err) {
+        alert('UPI ID: ' + text + '\n\nPlease copy manually');
+    } finally {
+        document.body.removeChild(textArea);
+    }
+}
+
+function showCopySuccess() {
+    // Create and show success message
+    const toast = document.createElement('div');
+    toast.innerHTML = '<i class="fas fa-check me-2"></i>UPI ID copied: 7705920756-3@ybl';
+    toast.className = 'position-fixed bg-success text-white p-3 rounded shadow';
+    toast.style.cssText = 'top: 20px; right: 20px; z-index: 9999; font-size: 14px;';
+    
+    document.body.appendChild(toast);
+    
+    // Animate in
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateX(100%)';
+    requestAnimationFrame(() => {
+        toast.style.transition = 'all 0.3s ease';
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(0)';
+    });
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (toast.parentNode) {
+                document.body.removeChild(toast);
+            }
+        }, 300);
+    }, 3000);
+}
+
 // Export functions for external use
 window.KRCWebsite = {
     showAlert,
@@ -509,5 +576,6 @@ window.KRCWebsite = {
     throttle,
     isInViewport,
     getDeviceType,
-    trackEvent
+    trackEvent,
+    copyUPI
 };
