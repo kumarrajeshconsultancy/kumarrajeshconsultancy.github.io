@@ -1,17 +1,883 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <p>Hello World !</p>
-    <script type="module" src="./src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <!--<script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>-->
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Rajesh Consultancy - Training & Consulting Excellence</title>
+    <meta name="description" content="Leading training institute and consultancy firm offering cutting-edge online courses and comprehensive business solutions across India.">
+    <meta name="keywords" content="online training, consultancy, AWS, Azure, Python, DevOps, data engineering, business solutions">
+    
+    <!-- External CSS Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <div class="brand-logo">
+                    <span class="brand-initials">KRC</span>
+                </div>
+                <div class="brand-text ms-2">
+                    <div class="brand-name">Kumar Rajesh Consultancy</div>
+                    <div class="brand-tagline">Training & Consulting Excellence</div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#training">Training</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#consultancy">Consultancy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-btn" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Your Gateway to<br>
+                            <span class="text-warning">Tech Excellence</span><br>
+                            <span class="text-white">& Business</span><br>
+                            <span class="text-white">Growth</span>
+                        </h1>
+                        <p class="hero-description">
+                            Leading training institute and consultancy firm offering cutting-edge online courses and 
+                            comprehensive business solutions across India.
+                        </p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Online Training Institute</h4>
+                                        <p>15+ trending technology courses with expert trainers</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <div class="service-content">
+                                        <h4>Business Consultancy</h4>
+                                        <p>Comprehensive solutions for digital transformation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-buttons mt-4">
+                            <a href="#training" class="btn btn-warning btn-lg me-3">
+                                <i class="fas fa-play me-2"></i>Explore Courses
+                            </a>
+                            <a href="#consultancy" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-handshake me-2"></i>Consultancy Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="stats-card">
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h3 class="text-warning">1000+</h3>
+                                    <p>Students Trained</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h3 class="text-warning">500+</h3>
+                                    <p>Clients Served</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h3 class="text-warning">15+</h3>
+                                    <p>Technology Courses</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="stat-item">
+                                    <h3 class="text-warning">5+ Years</h3>
+                                    <p>Industry Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="training" class="training-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Online Training Courses</h2>
+                <p class="section-subtitle">Master trending technologies with our comprehensive online training programs designed for working professionals and students.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- DevOps Course -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon devops">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>DevOps with AWS & Linux</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Learn DevOps practices with AWS cloud services and Linux administration. Learn CI/CD, containerization, and infrastructure automation.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Azure Course -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon azure">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Azure Data Engineer & Azure DevOps</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Design and implement data solutions on Microsoft Azure. Learn Azure Data Factory, Synapse Analytics, and data warehousing.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Python Course -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon python">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Python Developer & Data Science with AI</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Complete Python programming with Data Science, Machine Learning, and AI. Hands-on projects with real-world datasets.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GCP Course -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon gcp">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Google Cloud Platform (GCP)</h4>
+                            <p class="course-duration">Duration: 2 Months</p>
+                            <p class="course-description">Master Google Cloud services for compute, storage, networking, and machine learning. Prepare for GCP certification.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Java Full Stack -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon java">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Java Full Stack Development</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">End-to-end Java development with Spring Boot, React, and microservices architecture. Build enterprise applications.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- UI Full Stack -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon ui">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>UI Full Stack Development</h4>
+                            <p class="course-duration">Duration: 2 Months</p>
+                            <p class="course-description">Modern frontend development with React, Angular, Node.js, and MongoDB. Create responsive web applications.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SalesForce CRM -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon salesforce">
+                            <i class="fab fa-salesforce"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>SalesForce CRM</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Complete Salesforce administration and development. Learn Apex, Lightning, and prepare for Salesforce certification.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blockchain -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon blockchain">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Blockchain Development</h4>
+                            <p class="course-duration">Duration: 2 Months</p>
+                            <p class="course-description">Learn blockchain technology, smart contracts, and DApp development with Ethereum and Solidity programming.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ServiceNow -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon servicenow">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>ServiceNow Developer</h4>
+                            <p class="course-duration">Duration: 2 Months</p>
+                            <p class="course-description">ServiceNow platform development, customization, and administration. Learn workflows, scripting, and integrations.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon ml">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Machine Learning & AI</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Advanced machine learning algorithms, neural networks, and AI implementation with Python and TensorFlow.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kubernetes -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon kubernetes">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Kubernetes & Docker</h4>
+                            <p class="course-duration">Duration: 2 Months</p>
+                            <p class="course-description">Container orchestration with Kubernetes and Docker. Learn deployment, scaling, and management of containerized applications.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- React & Node.js -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon react">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>React & Node.js Full Stack</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Modern full-stack development with React frontend and Node.js backend. Build scalable web applications.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cybersecurity -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon cybersecurity">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Cybersecurity & Ethical Hacking</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Comprehensive cybersecurity training including ethical hacking, penetration testing, and security auditing.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Power BI -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon powerbi">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Power BI & Tableau</h4>
+                            <p class="course-duration">Duration: 3 Months</p>
+                            <p class="course-description">Data visualization and business intelligence with Power BI and Tableau. Create interactive dashboards and reports.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Snowflake -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card">
+                        <div class="course-icon snowflake">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Snowflake Data Platform</h4>
+                            <p class="course-duration">Duration: 2 Months</p>
+                            <p class="course-description">Cloud data warehouse with Snowflake. Learn data loading, querying, and optimization for modern analytics.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Technology Training -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card custom-course">
+                        <div class="course-icon other">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="course-content">
+                            <h4>Other Technology Training</h4>
+                            <p class="course-duration">Duration: Flexible</p>
+                            <p class="course-description">Looking for a specific technology course not listed? Contact us for custom training programs tailored to your needs.</p>
+                            <div class="course-features">
+                                <span class="badge">Online/Offline</span>
+                            </div>
+                            <a href="#contact" class="btn btn-outline-primary mt-3">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#contact" class="btn btn-primary btn-lg">View All Courses →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultancy Section -->
+    <section id="consultancy" class="consultancy-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Business Consultancy Services</h2>
+                <p class="section-subtitle">Comprehensive business solutions to drive growth, optimize operations, and achieve digital transformation goals.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Website & App Design -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon website">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="consultancy-content">
+                            <h4>Website & App Design</h4>
+                            <p>Professional website and mobile app design services to create compelling digital experiences for your business.</p>
+                            <a href="#contact" class="btn btn-outline-primary">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- YouTube & Instagram Growth -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon social">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="consultancy-content">
+                            <h4>YouTube & Instagram Growth</h4>
+                            <p>Strategic optimization and growth strategies to leverage your social media presence and increase engagement.</p>
+                            <a href="#contact" class="btn btn-outline-primary">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Digital Support & Cyber Security -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="consultancy-card">
+                        <div class="consultancy-content">
+                            <h4>Digital Support & Cyber Security</h4>
+                            <p>Comprehensive digital support and cybersecurity services to protect your business data and operations.</p>
+                            <a href="#contact" class="btn btn-outline-primary">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Career Counseling -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon career">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="consultancy-content">
+                            <h4>Career Counseling & Job Referrals</h4>
+                            <p>Professional career guidance and job placement assistance to help you achieve your career goals.</p>
+                            <a href="#contact" class="btn btn-outline-primary">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resume Building -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon resume">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="consultancy-content">
+                            <h4>Resume Building & Company Reviews</h4>
+                            <p>Expert resume crafting and detailed company insights to make informed career decisions.</p>
+                            <a href="#contact" class="btn btn-outline-primary">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Logo Design -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="consultancy-card">
+                        <div class="consultancy-icon design">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="consultancy-content">
+                            <h4>Logo Design & Media Editing</h4>
+                            <p>Creative logo design and professional videography/editing services to enhance your brand identity.</p>
+                            <a href="#contact" class="btn btn-outline-primary">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Business Services -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="consultancy-card custom-service">
+                        <div class="consultancy-icon other-service">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="consultancy-content">
+                            <h4>Other Business Services</h4>
+                            <p>Need a specific business solution not listed? We provide custom consultancy tailored specifically to your requirements.</p>
+                            <a href="#contact" class="btn btn-outline-primary">Get Quote →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="custom-solutions mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <div class="custom-solutions-card">
+                            <h3>Need Custom Solutions?</h3>
+                            <p>Don't see what you need? Contact us for customized business solutions tailored specifically to your requirements.</p>
+                            <a href="#contact" class="btn btn-warning btn-lg">Request Custom Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <div class="team-placeholder">
+                            <i class="fas fa-users fa-5x text-primary mb-3"></i>
+                            <p class="text-muted">Professional Team Collaboration</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="section-title">About Kumar Rajesh Consultancy</h2>
+                        <p class="lead">Kumar Rajesh Consultancy is a premier training institute and business consulting firm based in India, dedicated to empowering individuals and organizations through cutting-edge education and strategic business solutions.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Training Excellence</h5>
+                                    <p>Comprehensive online training programs in trending technologies with real-world projects and hands-on practice.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Business Growth</h5>
+                                    <p>Strategic business consulting to help businesses optimize operations, increase profitability, and achieve digital transformation.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h5>Personalized Support</h5>
+                                    <p>Dedicated support for career counseling, job referrals, and professional development to help you achieve your goals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-buttons mt-4">
+                            <a href="#training" class="btn btn-primary me-3">Explore Training</a>
+                            <a href="#consultancy" class="btn btn-outline-primary">Explore Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to start your learning journey or transform your business? Contact us today for personalized guidance and solutions.</p>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="contact-form-card">
+                        <h3>Send us a Message</h3>
+                        <form id="contactForm" action="https://formsubmit.co/connect@kumarrajeshconsultancy.com" method="POST">
+                            <!-- FormSubmit Configuration -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission - Kumar Rajesh Consultancy">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://kumarrajeshconsultancy.github.io/thank-you.html">
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Service Interested In</label>
+                                <select class="form-select" id="service" name="service">
+                                    <option value="">Select a Service</option>
+                                    <optgroup label="Training Courses">
+                                        <option value="DevOps with AWS & Linux">DevOps with AWS & Linux</option>
+                                        <option value="Azure Data Engineer & DevOps">Azure Data Engineer & DevOps</option>
+                                        <option value="Python Developer & Data Science">Python Developer & Data Science</option>
+                                        <option value="Google Cloud Platform">Google Cloud Platform</option>
+                                        <option value="Java Full Stack">Java Full Stack Development</option>
+                                        <option value="UI Full Stack">UI Full Stack Development</option>
+                                        <option value="SalesForce CRM">SalesForce CRM</option>
+                                        <option value="Blockchain Development">Blockchain Development</option>
+                                        <option value="ServiceNow Developer">ServiceNow Developer</option>
+                                        <option value="Machine Learning & AI">Machine Learning & AI</option>
+                                        <option value="Kubernetes & Docker">Kubernetes & Docker</option>
+                                        <option value="React & Node.js">React & Node.js Full Stack</option>
+                                        <option value="Cybersecurity">Cybersecurity & Ethical Hacking</option>
+                                        <option value="Power BI & Tableau">Power BI & Tableau</option>
+                                        <option value="Snowflake">Snowflake Data Platform</option>
+                                        <option value="Other Technology">Other Technology Training</option>
+                                    </optgroup>
+                                    <optgroup label="Consultancy Services">
+                                        <option value="Website & App Design">Website & App Design</option>
+                                        <option value="YouTube & Instagram Growth">YouTube & Instagram Growth</option>
+                                        <option value="Digital Support & Cyber Security">Digital Support & Cyber Security</option>
+                                        <option value="Career Counseling">Career Counseling & Job Referrals</option>
+                                        <option value="Resume Building">Resume Building & Company Reviews</option>
+                                        <option value="Logo Design">Logo Design & Media Editing</option>
+                                        <option value="Other Business Services">Other Business Services</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your requirements..." required></textarea>
+                            </div>
+                            
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="consent" name="consent" required>
+                                <label class="form-check-label" for="consent">
+                                    I consent to having my information processed to receive responses to my inquiry. *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <!-- Contact Information -->
+                        <div class="contact-info-card mb-4">
+                            <div class="contact-info-item">
+                                <div class="contact-icon location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Our Location</h5>
+                                    <p>Gurgaon, Surat, Gandhinagar, Uttar Pradesh, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon phone">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Phone Number</h5>
+                                    <p>+91 8810841429</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon email">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Email Addresses</h5>
+                                    <p>connect@kumarrajeshconsultancy.com<br>
+                                    kumarrajeshconsultancy@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon hours">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Working Hours</h5>
+                                    <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                    Saturday: 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Contact -->
+                        <div class="quick-contact">
+                            <h4>Quick Contact</h4>
+                            <div class="quick-contact-buttons">
+                                <a href="https://wa.me/918810841429" target="_blank" class="btn btn-success btn-lg mb-2 w-100">
+                                    <i class="fab fa-whatsapp me-2"></i>WhatsApp Chat
+                                </a>
+                                <a href="tel:+918810841429" class="btn btn-warning btn-lg w-100">
+                                    <i class="fas fa-phone me-2"></i>Call Us Now
+                                </a>
+                            </div>
+                            
+                            <div class="payment-info mt-4">
+                                <p class="text-center text-muted">Payment Options</p>
+                                <div class="row text-center">
+                                    <div class="col-md-6 mb-2">
+                                        <p class="mb-1"><strong>PayPal:</strong></p>
+                                        <p class="small">@8810841429</p>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <p class="mb-1"><strong>UPI:</strong></p>
+                                        <p class="small">7705920756-3@ybl</p>
+                                    </div>
+                                </div>
+                                <p class="text-center small"><strong>Account Name: Kumar Rajesh</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>KRC Consultancy</h5>
+                        <p>Empowering individuals and businesses through cutting-edge training and strategic consulting excellence.</p>
+                        <div class="social-links">
+                            <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Training Courses</h5>
+                        <ul class="footer-links">
+                            <li><a href="#training">DevOps with AWS</a></li>
+                            <li><a href="#training">Azure Data Engineering</a></li>
+                            <li><a href="#training">Python & Data Science</a></li>
+                            <li><a href="#training">Java Full Stack</a></li>
+                            <li><a href="#training">All Courses</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Consultancy Services</h5>
+                        <ul class="footer-links">
+                            <li><a href="#consultancy">Website Design</a></li>
+                            <li><a href="#consultancy">Digital Marketing</a></li>
+                            <li><a href="#consultancy">Career Security</a></li>
+                            <li><a href="#consultancy">Career Counseling</a></li>
+                            <li><a href="#consultancy">Custom Solutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Contact Info</h5>
+                        <div class="contact-item">
+                            <i class="fas fa-phone me-2"></i>
+                            <span>+91 8810841429</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope me-2"></i>
+                            <span>connect@kumarrajeshconsultancy.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <span>Gurgaon, Surat, Gandhinagar, Uttar Pradesh, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Kumar Rajesh Consultancy. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> for your success</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/918810841429" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/form-handler.js"></script>
+</body>
 </html>
