@@ -504,7 +504,7 @@ if ('serviceWorker' in navigator) {
 
 // UPI Copy Function
 function copyUPI() {
-    const upiId = "rk8595318@icici";
+    const upiId = "KumarRajeshConsultancy@ybl";
     
     // Try to copy to clipboard
     if (navigator.clipboard && window.isSecureContext) {
@@ -542,7 +542,7 @@ function fallbackCopy(text) {
 function showCopySuccess() {
     // Create and show success message
     const toast = document.createElement('div');
-    toast.innerHTML = '<i class="fas fa-check me-2"></i>UPI ID copied: 7705920756-3@ybl';
+    toast.innerHTML = '<i class="fas fa-check me-2"></i>UPI ID copied: KumarRajeshConsultancy@ybl';
     toast.className = 'position-fixed bg-success text-white p-3 rounded shadow';
     toast.style.cssText = 'top: 20px; right: 20px; z-index: 9999; font-size: 14px;';
     
