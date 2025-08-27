@@ -43,7 +43,7 @@
         .project-card {
             flex: 0 0 auto;
             width: 280px;
-            height: 200px;
+            height: 180px;
             margin: 0 15px;
             border-radius: 10px;
             overflow: hidden;
@@ -62,13 +62,12 @@
         }
         
         .project-image {
-            height: 130px;
+            height: 110px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             background: #f1f3f5;
-            position: relative;
         }
         
         .project-image img {
@@ -108,16 +107,6 @@
             text-overflow: ellipsis;
         }
         
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: #3498db;
-            animation: spin 1s ease-in-out infinite;
-        }
-        
         @keyframes scroll {
             0% {
                 transform: translateX(0);
@@ -127,19 +116,11 @@
             }
         }
         
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
         @media (max-width: 768px) {
             .project-card {
                 width: 240px;
-                height: 180px;
+                height: 160px;
                 margin: 0 10px;
-            }
-            
-            .project-image {
-                height: 110px;
             }
             
             @keyframes scroll {
@@ -161,55 +142,90 @@
     </div>
 
     <script>
-        // Your website URLs
-        const websites = [
-            "https://kumarbrotherscompany.github.io",
-            "https://yjssngo.github.io",
-            "https://iiitchamp.github.io",
-            "https://championrajeshkumar.github.io",
-            "https://kumarbrotherscompany.github.io"
+        // Replace with your actual projects data
+        const projects = [
+            {
+                title: "E-Commerce Store",
+                url: "https://example-ecommerce.com",
+                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-shopping-cart"
+            },
+            {
+                title: "Travel Blog",
+                url: "https://example-travel.com",
+                image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-plane"
+            },
+            {
+                title: "Tech News Portal",
+                url: "https://example-tech.com",
+                image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-newspaper"
+            },
+            {
+                title: "Recipe Website",
+                url: "https://example-recipes.com",
+                image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-utensils"
+            },
+            {
+                title: "Fitness App",
+                url: "https://example-fitness.com",
+                image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-dumbbell"
+            },
+            {
+                title: "Photography Portfolio",
+                url: "https://example-photos.com",
+                image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-camera"
+            },
+            {
+                title: "Educational Platform",
+                url: "https://example-learning.com",
+                image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-graduation-cap"
+            },
+            {
+                title: "Music Streaming",
+                url: "https://example-music.com",
+                image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400&q=80",
+                icon: "fa-music"
+            }
         ];
 
         const showcaseTrack = document.querySelector('.showcase-track');
         let isPausedByUser = false;
-        
-        // Function to generate thumbnail URL using a screenshot API
-        function generateThumbnailUrl(url) {
-            // Using a free screenshot API (note: these may have limitations)
-            return `https://api.screenshotmachine.com?key=5d6f2f&url=${encodeURIComponent(url)}&dimension=600x400`;
-            
-            // Alternative: using a proxy to avoid CORS issues
-            // return `https://images.weserv.nl/?url=${encodeURIComponent(url.replace(/^https?:\/\//, ''))}&w=600&h=400&t=square`;
-        }
         
         // Function to generate project cards
         function generateProjectCards() {
             // Clear existing content
             showcaseTrack.innerHTML = '';
             
-            // Create cards for each website
-            websites.forEach(website => {
+            // Create cards for each project
+            projects.forEach(project => {
                 const card = document.createElement('div');
                 card.className = 'project-card';
                 
-                // Extract domain name for title
-                const domain = website.replace(/^https?:\/\/(www\.)?/, '').replace(/\..*/, '');
-                const title = domain.charAt(0).toUpperCase() + domain.slice(1);
+                // Use image if available, otherwise use icon
+                const imageContent = project.image 
+                    ? `<img src="${project.image}" alt="${project.title}">`
+                    : `<i class="fas ${project.icon}"></i>`;
                 
                 card.innerHTML = `
                     <div class="project-image">
-                        <div class="loading-spinner"></div>
+                        ${imageContent}
                     </div>
                     <div class="project-content">
-                        <div class="project-title">${title}</div>
-                        <div class="project-url">${website}</div>
+                        <div class="project-title">${project.title}</div>
+                        <div class="project-url">${project.url}</div>
                     </div>
                 `;
                 
-                // Add click event to open website
+                // Add click event to open project
                 card.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    window.open(website, '_blank');
+                    window.open(project.url, '_blank');
                 });
                 
                 // Pause on hover
@@ -225,59 +241,11 @@
                 });
                 
                 showcaseTrack.appendChild(card);
-                
-                // Load thumbnail after a short delay to allow rendering
-                setTimeout(() => loadThumbnail(card, website), 100);
             });
             
             // Duplicate the cards for infinite scroll effect
-            setTimeout(() => {
-                const cloneCards = showcaseTrack.innerHTML;
-                showcaseTrack.innerHTML += cloneCards;
-                
-                // Add events to cloned cards
-                document.querySelectorAll('.project-card').forEach((card, index) => {
-                    if (index >= websites.length) {
-                        const originalIndex = index % websites.length;
-                        const website = websites[originalIndex];
-                        
-                        card.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            window.open(website, '_blank');
-                        });
-                        
-                        card.addEventListener('mouseenter', () => {
-                            showcaseTrack.classList.add('paused');
-                        });
-                        
-                        card.addEventListener('mouseleave', () => {
-                            if (!isPausedByUser) {
-                                showcaseTrack.classList.remove('paused');
-                            }
-                        });
-                    }
-                });
-            }, 500);
-        }
-        
-        // Function to load thumbnail
-        function loadThumbnail(card, url) {
-            const imageContainer = card.querySelector('.project-image');
-            const spinner = card.querySelector('.loading-spinner');
-            
-            const img = new Image();
-            img.onload = function() {
-                if (spinner) spinner.style.display = 'none';
-                imageContainer.innerHTML = '';
-                imageContainer.appendChild(img);
-            };
-            img.onerror = function() {
-                // If thumbnail fails to load, use a placeholder icon
-                if (spinner) spinner.style.display = 'none';
-                imageContainer.innerHTML = `<i class="fas fa-globe"></i>`;
-            };
-            img.src = generateThumbnailUrl(url);
-            img.alt = url;
+            const cloneCards = showcaseTrack.innerHTML;
+            showcaseTrack.innerHTML += cloneCards;
         }
         
         // Initialize the showcase
