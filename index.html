@@ -812,6 +812,21 @@
                 </div>
             </div>
         </div>
+        <!--this is for other websites / products listing purpose -->
+       <div id="projects-showcase"></div>
+
+<script>
+// Load the showcase from your GitHub Pages URL
+fetch('https://kumarrajeshconsultancy.github.io/projects-showcase.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('projects-showcase').innerHTML = data;
+  })
+  .catch(error => {
+    console.error('Error loading projects showcase:', error);
+  });
+</script>
+<!--end for other websites / products listing purpose -->
     </section>
 
     <!-- Footer -->
